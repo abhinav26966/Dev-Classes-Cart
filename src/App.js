@@ -3,7 +3,8 @@ import { a, b } from './components/Products/Products';
 import Products from './components/Products/Products';
 import { useRef, useState } from 'react';
 import CartContext from './context/CartContext';
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
+import CartComponent from './components/CartComponent/CartComponent';
 
 function App() {
   let [cart, setCart] = useState({});
@@ -33,6 +34,7 @@ function App() {
   return (
     <CartContext.Provider value={{ cart, increaseQuantity, decreaseQuantity }}>
       <div className="App">
+        <CartComponent />
         <Products />
         <Cart ref={cartRef} />
       </div>
